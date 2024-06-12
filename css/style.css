@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+/* accordion  */
+.accordion{
+    border-radius: 5px;
+    border: 0.5px solid gray;
+}
+.accordion-btt{
+    display: flex;
+    justify-content: space-between;
+    padding: 0% 2%;
+    align-items: center;
+}
+.accordion button{
+    width: 100%;
+    height: 50px;
+    text-align: left;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: white;
+}
+.accordion .accordion-ct {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.accordion.active .accordion-ct {
+    max-height: 1000px; /* hoặc một giá trị đủ lớn để hiển thị nội dung đầy đủ */
+}
+.accordion-btt.active {
+    background-color: #e7f1ff;
+    color: #0c63e4;
+    border: 2px solid #86b7fe;
+
+}
+.fa-solid.rotate{
+   transform: rotate(180deg);
+   transition: 0.3s
+}
+
+
+/* Carousel  */
+img{
+    width: 100%;
+}
+
+.moveimage{
+    display: none;
+}
+.moveimage.active{
+    width: 100%; 
+}
+
