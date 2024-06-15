@@ -5,6 +5,7 @@ function handleCollapsed(button) {
         const allContents = document.querySelectorAll('.accordion-ct');
         const allButtons = document.querySelectorAll('.accordion-btt');
         const rotates = document.querySelectorAll('.fa-solid');
+        console.log(rotates)
 
         allContents.forEach(item => {
             if (item !== content) {
@@ -14,7 +15,7 @@ function handleCollapsed(button) {
         });
         allButtons.forEach(item => item.classList.remove('active'));
 
-        
+
         content.classList.toggle('active');
         if (content.classList.contains('active')) {
             content.style.maxHeight = content.scrollHeight + "px";
@@ -27,6 +28,7 @@ function handleCollapsed(button) {
 
         // Xác định biểu tượng cần xoay và xoay nó
         const rotate = button.querySelector('.fa-solid');
+        console.log(rotate)
         rotates.forEach(icon => {
             if (icon === rotate) {
                 icon.classList.toggle('rotate');
@@ -48,13 +50,28 @@ const rightButton = document.querySelector('.rightbutton');
 
 const leftButton = document.querySelector('.leftbutton');
 const slide = document.querySelectorAll('.slide');
-rightButton.onclick = handleCarousel();
-function handleCarousel (Button){
-    Button.addEventListener('click',()=>{
-        activeCarousel = document.querySelector('.active');
-        
-       
+
+let currentIndex = 0;
+function showSlide(index) {
+    // slide.forEach((slide, i) => {
+    //     if (i === index) {
+    //         slide.classList.add('active')
+    //     } else {
+    //         slide.classList.remove('active')
+    //     }
+    // })
+    slide.forEach((slide,i)=>{
+        slide.classList.toggle("active", i===index);
     })
-
-
 }
+function rightSlide (){
+    currentIndex = (currentIndex+1)%slide.length
+    showSlide(currentIndex)
+}
+function leftSlide() {
+    currentIndex = (currentIndex - 1 + slide.length) % slide.length;
+    showSlide(currentIndex);
+}
+showSlide(currentIndex);
+rightButton.addEventListener('click', rightSlide);
+leftButton.addEventListener('click', leftSlide);
