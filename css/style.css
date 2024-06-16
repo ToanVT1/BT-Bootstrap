@@ -88,3 +88,38 @@
 .carousel-container .rightbutton{
     right: 20px;
 }
+
+/* bai3  */
+.bai3 ul{
+    display: flex;
+    margin: 0;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.bai3 button{
+    color:#0d6efd;
+    border: 1px solid transparent;
+   
+    background-color: #fff;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.bai3 button.active{
+    color:#495057;
+    border-color: #dee2e6 #dee2e6 #fff;
+
+}
+li{
+   
+    list-style: none;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
