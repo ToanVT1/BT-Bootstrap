@@ -75,3 +75,27 @@ function leftSlide() {
 showSlide(currentIndex);
 rightButton.addEventListener('click', rightSlide);
 leftButton.addEventListener('click', leftSlide);
+
+// ------bai 3------------------------------------------
+
+
+        const navLinks = document.querySelectorAll('.nav-links');
+        const tabPanels = document.querySelectorAll('.tab-panel')
+    
+
+       
+        function selectNavlink(tabIndex){
+            navLinks.forEach(navLink =>navLink.classList.remove('active')); 
+            tabPanels.forEach(tabPanel=>tabPanel.classList.remove('active'));
+
+            navLinks[tabIndex].classList.add('active');
+            tabPanels[tabIndex].classList.add('active');
+        };
+        navLinks.forEach((navlink, index) => {
+            navlink.addEventListener('click', ()=> {
+                selectNavlink(index);
+            });
+        });
+
+        selectNavlink(0);
+ 
